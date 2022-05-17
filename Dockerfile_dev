@@ -1,0 +1,11 @@
+FROM openjdk:8-jre-alpine
+
+ADD target/specoffers-0.0.13.jar /specoffers.jar
+
+ENV JAVA_OPTS=""
+EXPOSE 8080
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-Dspring.profiles.active=dev","-jar", "/specoffers.jar"]
+
+
+
+
